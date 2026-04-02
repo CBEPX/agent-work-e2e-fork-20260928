@@ -1,0 +1,23 @@
+[Unit]
+Description=QEMU Serial Console REST/MCP Proxy
+Documentation=https://github.com/ioplane/serial-proxy
+After=pve-cluster.service pvedaemon.service
+Wants=pve-cluster.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/serial-proxy --rest --vmid 700 --vmid 600 --port 8800
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/serial-proxy
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

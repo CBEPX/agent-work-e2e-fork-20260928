@@ -1,0 +1,60 @@
+# Binaries
+/serial-proxy
+/bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test
+*.test
+*.out
+coverage.html
+coverage.txt
+
+# Go
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Podman / Docker
+.podman/
+
+# Build artifacts
+dist/
+release-notes.md
+
+# Profiling
+*.prof
+
+# SQLite databases (runtime, not committed)
+*.db
+*.db-wal
+*.db-shm
+
+# AI artifacts — DO NOT COMMIT
+CLAUDE.local.md
+.claude/
+.mcp.json
+.serena/
+.codex
+docs/tmp/
+*.session.json
+*.conversation.json
+
+# Fuzz corpus
+**/testdata/fuzz/
